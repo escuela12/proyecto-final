@@ -10,7 +10,7 @@ body {
     font-size: 20px;
     margin: 2px;
     padding: 2px;
-    background-color: royalblue;
+    background-color: gray;
     
 }    
 
@@ -144,3 +144,47 @@ table {
         -webkit-transform: none;
     }
 } 
+
+.left {
+    animation-name: fadeLeft;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    visibility: visible;
+}
+
+.slideLeft {
+    animation-name: fadeLeft;
+}
+
+@keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translate3d(500%, 0, 0);
+        -webkit-transform: translate3d(500%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+        -webkit-transform: none;
+    }
+} 
+
+/*estilo subfooter*/
+
+.subfooter {
+    display: flex;
+    justify-content: space-around;
+}
+
+.lista {
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 13%;
+}
+
+ul li {
+    list-style: none;
+}
