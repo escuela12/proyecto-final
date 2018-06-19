@@ -143,32 +143,7 @@ table {
         transform: none;
         -webkit-transform: none;
     }
-} 
-
-.left {
-    animation-name: fadeLeft;
-    animation-duration: 0.5s;
-    animation-delay: 0.5s;
-    visibility: visible;
 }
-
-.slideLeft {
-    animation-name: fadeLeft;
-}
-
-@keyframes fadeLeft {
-    0% {
-        opacity: 0;
-        transform: translate3d(500%, 0, 0);
-        -webkit-transform: translate3d(500%, 0, 0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: none;
-        -webkit-transform: none;
-    }
-} 
 
 /*estilo subfooter*/
 
