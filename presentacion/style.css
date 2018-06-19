@@ -192,11 +192,11 @@ ul li {
 
 /*Estilos del modal*/
 
-.modal, .modal1, .modal2, .modal3 {
+.modal, .modal1, .modal2, .modal3, .modal4 {
     display: none;
 }
 
-.modal:target, .modal1:target, .modal2:target, .modal3:target {
+.modal:target, .modal1:target, .modal2:target, .modal3:target, .modal4:target {
     
     display: block;
     position: fixed;
@@ -207,7 +207,7 @@ ul li {
     height: 100%;
 }
 
-.modal, .modal1, .modal2, .modal3 h3 {
+.modal, .modal1, .modal2, .modal3 h3, .modal4 h3 {
     color: #fff;
     font-size: 30px;
     text-align: center;
