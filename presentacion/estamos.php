@@ -54,7 +54,7 @@ require_once "negocio/Contacto.php";
 <div class="containerfluid top">
     <div class="row contacto">        
         <form name="contactform" method="post" action="insertar.php" class="col-6 form-inline" style='padding-bottom: 6%;'> 
-            <table width="500px"><!---Este tamaño en px es personalizable -->
+            <table><!---Este tamaño en px es personalizable -->
                 <tr>
                     <td valign="top">
                         <label for="nombre" class="table">Nombre *</label>
