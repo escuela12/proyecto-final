@@ -2,7 +2,7 @@
 
 class Conexion extends PDO {
 	
-	private const DB_HOST="localhost";
+	private const DB_HOST='localhost';
     private const DB_NAME="fabrimetal";
 	private const DB_USER="root";
 	private const DB_PASS="";

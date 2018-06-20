@@ -5,11 +5,11 @@ require_once 'conexion.php';
 class DataContacto {
 	const TABLA = 'contactos';
 
-	public function insertar($tipo, $nombre, $email, $telefono, $texto, $respondido ,$respuesta){
+	public function insertar($IIDContacto, $tipo, $nombre, $email, $telefono, $texto, $respondido ,$respuesta){
 
 		$conexion = new conexion ();
 
-		$consulta = $conexion->prepare ('INSERT INTO ' . self::TABLA . ' (tipo, nombre, email, telefono, texto, respondido, respuesta ) values (:tipo, :nombre, :email, :telefono, :texto, :respondido, :respuesta  )');
+		$consulta = $conexion->prepare ('INSERT INTO ' . self::TABLA . ' (null, tipo, nombre, email, telefono, texto, respondido, respuesta ) values (:tipo, :nombre, :email, :telefono, :texto, :respondido, :respuesta  )');
 
 		$consulta->bindParam(':tipo', $tipo);
 		$consulta->bindParam(':nombre', $nombre);

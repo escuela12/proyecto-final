@@ -1,5 +1,5 @@
 <?php 
-require "../negocio/Contacto.php";
+require_once "negocio/Contacto.php";
 
 ?>
 <html lang="en">
@@ -18,21 +18,21 @@ require "../negocio/Contacto.php";
         <a href="index.html"><img src="logo/logo.jpg" class="logo" alt=""></a>
     </div>
     <div class="home">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
               <a class="navbar-brand" href="index.html">Home</a>
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" href="trabajo.html">Nuestro trabajo <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="somos.html">Quienes Somos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="estamos.php">Contacto</a>
+                  <a class="nav-link" href="estamos.php">Contacto</a>
                 </li>
               </ul>              
             </div>
@@ -52,8 +52,8 @@ require "../negocio/Contacto.php";
     </div>
 </div> 
 <div class="containerfluid top">
-    <div class="row top contacto">
-        <form name="contactform" method="post" action="send_form_email.php" class="col-6 form-inline"> 
+    <div class="row contacto">        
+        <form name="contactform" method="post" action="insertar.php" class="col-6 form-inline" style='padding-bottom: 6%;'> 
             <table width="500px"><!---Este tamaño en px es personalizable -->
                 <tr>
                     <td valign="top">
@@ -89,66 +89,51 @@ require "../negocio/Contacto.php";
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align:center">
-                        <a href="" class="btn btn-primary btn-lg">Enviar</a>
+                        <a href="insertar.php" class="btn btn-primary btn-lg">Enviar</a>
                     </td>
                 </tr>
            </table>
-        </form>
-	<?php
-			if (isset($_POST['btInsertar'])) {
-          
-       
-  			$objgContacto = new Contacto(null, $_POST['tbTipo'], $_POST['tbNombre'], $_POST['tbEmail'], $_POST['tbTelefono'], $_POST['tbTexto'], $_POST['tbRespondido'], $_POST['tbRespuesta']);
-  
-  			$resultado = $objgContacto -> insertar();
-  			if ($resultado)
-      			echo "<p class='text-center text-primary'>Gracias por ponerse enviar su solicitud en brebre nos pondremos en contacto con usted.</p>";
-  			else
-      			echo "<p class='text-center text-danger'>Por favor vuelva a intentarlo.</p>";   
-		}
-		?>
+           <div class="col-6">
+                <h2 class="blockquote-footer text-center text-white">Puedes escribirnos para pedirnos información sin ningun tipo de compromiso y nos pondremos en contacto contigo lo mas pronto posible.</h2>
+           </div>
+        </form>               
         <div class="containerfluid">
-           <div class="row">
+            <div class="row">
                 <div class="col">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11954.879336176673!2d2.1289920327052916!3d41.488673266449396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a496729cf77391%3A0x4baf89b2cb83ecc3!2s08290+Cerdanyola%2C+Barcelona!5e0!3m2!1ses!2ses!4v1528039335938"
-                     width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                     <blockquote class="blockquote text-center">
                         <p class="mb-0 text-white">Estamos en el Parc Tecnologic s/n.</p>
-                       <footer class="blockquote-footer text-white">Cerdanyola del Valles-Barcelona. C.P. 08290</footer>
+                        <footer class="blockquote-footer text-white">Cerdanyola del Valles-Barcelona. C.P. 08290</footer>
                     </blockquote>            
                 </div>        
             </div>
         </div>           
-   </div>  
-</div>
-<div class="containerfluid top style">
-        <div class="row justify">
-            <div class="list col-3">
-                <ul class="col list-group">
-                    <li class="list-group-item">
-                        <a href="index.html" class="link">Home</a> 
-                    </li>
-                    <li class="list-group-item">
-                        <a href="somos.html" class="link">Quienes Somos</a>
-                    </li>
-                    <li class="list-group-item">
-                       <a href="contacto.html" class="link">Contacto</a> 
-                    </li>
-                    <li class="list-group-item">
-                        <a href="empleo.html" class="link">Empleo</a>
-                    </li>
-                   <li class="list-group-item">
-                        <a href="enlaces.html" class="link">Enlaces de Interes</a>
-                    </li>
-                </ul>
-           </div>
-            <div class="col-6">
-                <img src="logo/logo.jpg" class="logopie" alt="">
-            </div>
-       </div>     
+    </div>  
+</div> 
+<div class="subfooter top">
+    <div class="lista">
+        <ul>
+            <li>
+                <a href="index.html" class="link">Home</a>
+            </li>
+            <li>
+                <a href="somos.html" class="link">Quienes Somos</a>
+            </li>
+            <li>
+                <a href="contacto.html" class="link">Contacto</a>
+            </li>
+            <li>
+                <a href="enlaces.html" class="link">Enlaces de Interes</a>
+            </li>
+        </ul>
+    </div>
+    <div class="logopie">
+        <img src="logo/logo.jpg" class="logopie" alt="">
+    </div>
 </div>
 <footer class="footer top">
-   <p class="copy text-secondary">&copy; copyright 2018 Jimena Luperdi Caballero</p>
+    <p class="copy text-secondary">&copy; copyright 2018 Jimena Luperdi Caballero</p>
 </footer>
 
 
