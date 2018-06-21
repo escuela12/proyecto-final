@@ -26,13 +26,13 @@ class DataEmpleado {
 	}
 
 
-	public function Modificar($IDEmpleados, $nombre, $dni, $direccion, $telefono, $cargo){
+	public function Modificar($IDEmpleado, $nombre, $dni, $direccion, $telefono, $cargo){
 
 		$conexion = new conexion ();
 
-		$consulta = $conexion->prepare ('UPDATE ' . self::TABLA . ' SET IDEmpleados = :IDEmpleados, nombre = :nombre, dni = :dni, direccion = :direccion, telefono = :telefono, cargo = :cargo WHERE IDEmpleados = :IDEmpleados');
+		$consulta = $conexion->prepare ('UPDATE ' . self::TABLA . ' SET IDEmpleado = :IDEmpleado, nombre = :nombre, dni = :dni, direccion = :direccion, telefono = :telefono, cargo = :cargo WHERE IDEmpleado = :IDEmpleado');
 
-		$consulta->bindParam(':IDEmpleados', $IDEmpleados);
+		$consulta->bindParam(':IDEmpleado', $IDEmpleado);
 		$consulta->bindParam(':nombre', $nombre);
 		$consulta->bindParam(':dni', $dni);
 		$consulta->bindParam(':region', $region);
@@ -48,13 +48,13 @@ class DataEmpleado {
 		return $consulta;
 	}
 
-	public function Eliminar($IDEmpleados){
+	public function Eliminar($IDEmpleado){
 
 		$conexion = new conexion ();
 
-		$consulta = $conexion->prepare ('DELETE FROM ' . self::TABLA . ' WHERE IDEmpleados = :IDEmpleados');
+		$consulta = $conexion->prepare ('DELETE FROM ' . self::TABLA . ' WHERE IDEmpleado = :IDEmpleado');
 
-		$consulta->bindParam(':IDEmpleados', $IDEmpleados);
+		$consulta->bindParam(':IDEmpleado', $IDEmpleado);
 
 		$consulta->execute();
 		//echo $consulta->queryString ."</br>";
@@ -64,12 +64,12 @@ class DataEmpleado {
 		return $consulta;
 	}
 
-	public function buscarPorIDEmpleados($IDEmpleados){
+	public function buscarPorIDEmpleado($IDEmpleado){
 
 		$conexion = new conexion();
 
-		$consulta = $conexion->prepare('SELECT * FROM ' . self::TABLA .' WHERE IDEmpleados = :IDEmpleados');
-		$consulta->bindParam(':IDEmpleados', $IDEmpleados);
+		$consulta = $conexion->prepare('SELECT * FROM ' . self::TABLA .' WHERE IDEmpleado = :IDEmpleado');
+		$consulta->bindParam(':IDEmpleado', $IDEmpleado);
 		$consulta->execute();
 		$registro = $consulta->fetch();
 		$conexion = null;

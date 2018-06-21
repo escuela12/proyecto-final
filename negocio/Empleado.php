@@ -4,15 +4,15 @@ require_once '../datos/DataEmpleado.php';
 
 class Empleado {
 
-	private $IDEmpleados;
+	private $IDEmpleado;
 	private $nombre;
 	private $dni;
 	private $direccion;
 	private $telefono;
 	private $cargo;
 		
-	public function __construct($IDEmpleados=null, $nombre = null, $dni = null, $direccion = null, $telefono = null, $cargo = null){
-		$this -> IDEmpleados = $IDEmpleados;
+	public function __construct($IDEmpleado=null, $nombre = null, $dni = null, $direccion = null, $telefono = null, $cargo = null){
+		$this -> IDEmpleado = $IDEmpleado;
 		$this -> nombre = $nombre;
 		$this -> dni = $dni;
 		$this -> direccion = $direccion;
@@ -20,8 +20,8 @@ class Empleado {
 		$this -> cargo = $cargo;
 	}
 
-	public function getIDEmpleados(){
-		return $this -> IDEmpleados;
+	public function getIDEmpleado(){
+		return $this -> IDEmpleado;
 	}
 
 	public function getNombre(){
@@ -43,7 +43,7 @@ class Empleado {
 		return $this -> cargo;
 	}
 
-	public function setIDEmpleados($IDEmpleados){
+	public function setIDEmpleado($IDEmpleado){
 		$this -> IDEmpleados;
 	}
 
@@ -68,29 +68,29 @@ class Empleado {
 	}
 	
 	public function Insertar() {
-    	$objDataEmpleados = new DataEmpleado();
-        $resultado = $objDataEmpleados->Insertar($this -> nombre, $this -> dni, $this -> direccion, $this -> telefono, $this -> cargo);
+    	$objDataEmpleado = new DataEmpleado();
+        $resultado = $objDataEmpleado->Insertar($this -> nombre, $this -> dni, $this -> direccion, $this -> telefono, $this -> cargo);
         return $resultado;
     }
 
     public function Modificar() {
         $objDataEmpleado = new DataEmpleado();
-        $resultado = $objDataEmpleado->Modificar($this -> IDEmpleados, $this -> nombre, $this -> dni, $this -> direccion, $this -> telefono, $this -> cargo);
+        $resultado = $objDataEmpleado->Modificar($this -> IDEmpleado, $this -> nombre, $this -> dni, $this -> direccion, $this -> telefono, $this -> cargo);
 	    return $resultado;
     }
 
     public function Eliminar(){
         $objDataEmpleado = new DataEmpleado();
-        $resultado = $objDataEmpleado->Eliminar($this -> IDEmpleados);
+        $resultado = $objDataEmpleado->Eliminar($this -> IDEmpleado);
 	    return $resultado;
     }
 
-    public function buscarPorIDEmpleados($IDEmpleados) {
+    public function buscarPorIDEmpleado($IDEmpleado) {
 
     	$objDataEmpleado = new DataEmpleado();
-        $registro = $objDataEmpleado->buscarPorIDEmpleados($IDEmpleados);
+        $registro = $objDataEmpleado->buscarPorIDEmpleado($IDEmpleado);
         if ($registro)
-        	return new self($registro['IDEmpleados'] , $registro['nombre'] ,$registro['dni'] ,$registro['direccion'], $registro['telefono'], $registro['cargo']);
+        	return new self($registro['IDEmpleado'] , $registro['nombre'] ,$registro['dni'] ,$registro['direccion'], $registro['telefono'], $registro['cargo']);
         else 
         	return false;
     }
@@ -104,7 +104,7 @@ class Empleado {
         else {
         	$arrayEmpleados = array();
         	foreach ($arrayRegistros as $registro) {
-        		$objgEmpleados = new Empleado ($registro['IDEmpleados'] , $registro['nombre'] ,$registro['dni'] ,$registro['direccion'], $registro['telefono'], $registro['cargo']);
+        		$objgEmpleados = new Empleado ($registro['IDEmpleado'] , $registro['nombre'] ,$registro['dni'] ,$registro['direccion'], $registro['telefono'], $registro['cargo']);
         		$arrayEmpleados[] = $objgEmpleados;
         	}
 

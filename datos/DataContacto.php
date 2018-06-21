@@ -5,11 +5,11 @@ require_once 'conexion.php';
 class DataContacto {
 	const TABLA = 'contactos';
 
-	public function insertar($IIDContacto, $tipo, $nombre, $email, $telefono, $texto, $respondido ,$respuesta){
+	public function insertar($tipo, $nombre, $email, $telefono, $texto, $respondido ,$respuesta){
 
 		$conexion = new conexion ();
 
-		$consulta = $conexion->prepare ('INSERT INTO ' . self::TABLA . ' (null, tipo, nombre, email, telefono, texto, respondido, respuesta ) values (:tipo, :nombre, :email, :telefono, :texto, :respondido, :respuesta  )');
+		$consulta = $conexion->prepare ('INSERT INTO ' . self::TABLA . ' (IDContacto, tipo, nombre, email, telefono, texto, respondido, respuesta ) values (null, :tipo, :nombre, :email, :telefono, :texto, :respondido, :respuesta  )');
 
 		$consulta->bindParam(':tipo', $tipo);
 		$consulta->bindParam(':nombre', $nombre);
@@ -32,7 +32,7 @@ class DataContacto {
 
 		$conexion = new conexion ();
 
-		$consulta = $conexion->prepare ('UPDATE ' . self::TABLA . ' SET ,IDContacto = :IDContacto, tipo = :tipo, nombre = :nombre, email = :email, telefono = :telefono, texto = :texto, respondido = :respondido, respuesta = :respuesta WHERE IDContacto = :IDContacto');
+		$consulta = $conexion->prepare ('UPDATE ' . self::TABLA . ' SET IDContacto = :IDContacto, tipo = :tipo, nombre = :nombre, email = :email, telefono = :telefono, texto = :texto, respondido = :respondido, respuesta = :respuesta WHERE IDContacto = :IDContacto');
 
 		$consulta->bindParam(':IDContacto', $IDContacto);
 		$consulta->bindParam(':tipo', $tipo);
@@ -45,7 +45,7 @@ class DataContacto {
 
 		$consulta->execute();
 		//echo $consulta->queryString ."</br>"; sirven para ver donde estan los errores
-		//echo $consulta->ErrorInfo()[2]; sirve para ver cual es el error
+		//echo $consulta->ErrorInfo()[2]; 
 		$conexion = null;
 
 		return $consulta;

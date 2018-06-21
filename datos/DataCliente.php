@@ -9,7 +9,7 @@ class DataCliente {
 
 		$conexion = new conexion ();
 
-		$consulta = $conexion->prepare ('INSERT INTO ' . self::TABLA . ' (nombre, dni, email, direccion, tipo) values (:nombre, :dni, :email, :direccion, :tipo)');
+		$consulta = $conexion->prepare ('INSERT INTO ' . self::TABLA . ' (IDClientes, nombre, dni, email, direccion, tipo) values (null,:nombre, :dni, :email, :direccion, :tipo)');
 
 		$consulta->bindParam(':nombre', $nombre);
 		$consulta->bindParam(':dni', $dni);
@@ -19,7 +19,7 @@ class DataCliente {
 		
 		$resultado = $consulta->execute();
 		//echo $consulta->queryString;
-		//echo $consulta->ErrorInfo()[2];
+		echo $consulta->ErrorInfo()[2]; 
 		$conexion = null;
 
 	    return $resultado;
@@ -29,7 +29,7 @@ class DataCliente {
 
 		$conexion = new conexion ();
 
-		$consulta = $conexion->prepare ('UPDATE ' . self::TABLA . ' SET nombre = :nombre, dni = :dni, email = :email, direccion = :direccion, tipo = : tipo WHERE IDClientes = :IDClientes');
+		$consulta = $conexion->prepare ('UPDATE ' . self::TABLA . ' SET IDClientes = :IDClientes, nombre = :nombre, dni = :dni, email = :email, direccion = :direccion, tipo = :tipo WHERE IDClientes = :IDClientes');
 
 		$consulta->bindParam(':IDClientes', $IDClientes);
 		$consulta->bindParam(':nombre', $nombre);
@@ -40,7 +40,7 @@ class DataCliente {
 
 		$consulta->execute();
 		//echo $consulta->queryString ."</br>"; sirven para ver donde estan los errores
-		//echo $consulta->ErrorInfo()[2]; sirve para ver cual es el error
+		//echo $consulta->ErrorInfo()[2]; 
 		$conexion = null;
 
 		return $consulta;

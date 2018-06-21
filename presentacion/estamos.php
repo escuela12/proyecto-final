@@ -129,7 +129,7 @@ require_once "negocio/Contacto.php";
         </ul>
     </div>
     <div class="logopie">
-        <img src="logo/logo.jpg" class="logopie" alt="">
+        <img src="logo/logo.jpg" class="logofooter" alt="">
     </div>
 </div>
 <footer class="footer top">

@@ -4,16 +4,16 @@ require_once '../datos/DataCliente.php';
 
 class Cliente {
 
-	private $IDCliente;
+	private $IDClientes;
 	private $nombre;
 	private $dni;
 	private $email;
 	private $direccion;
 	private $tipo;
 		
-	public function __construct($IDcliente = null, $nombre = null, $dni = null, $email = null, $direccion = null, $tipo = null){
+	public function __construct($IDClientes = null, $nombre = null, $dni = null, $email = null, $direccion = null, $tipo = null){
 
-		$this -> IDcliente=$IDcliente;
+		$this -> IDClientes=$IDClientes;
 		$this -> nombre = $nombre;
 		$this -> dni = $dni;
 		$this -> email = $email;
@@ -21,8 +21,8 @@ class Cliente {
 		$this -> tipo = $tipo;
 	}
 
-	public function getIDCliente(){
-		return $this -> IDcliente;
+	public function getIDClientes(){
+		return $this -> IDClientes;
 	}
 
 	public function getNombre(){
@@ -44,8 +44,8 @@ class Cliente {
 		return $this -> tipo;
 	}
 
-	public function setIDCliente($IDCliente){
-		$this -> IDCliente;
+	public function setIDClientes($IDClientes){
+		$this -> IDClientes;
 	}
 
 	public function setNombre($nombre){
@@ -76,20 +76,20 @@ class Cliente {
 
     public function Modificar() {
         $objDataCliente = new DataCliente();
-        $resultado = $objDataCliente->Modificar($this -> IDcliente, $this -> nombre, $this -> dni, $this -> email, $this -> direccion, $this -> tipo);
+        $resultado = $objDataCliente->Modificar($this -> IDClientes, $this -> nombre, $this -> dni, $this -> email, $this -> direccion, $this -> tipo);
 	    return $resultado;
     }
 
     public function Eliminar(){
         $objDataCliente = new DataCliente();
-        $resultado = $objDataCliente->Eliminar($this -> IDcliente);
+        $resultado = $objDataCliente->Eliminar($this -> IDClientes);
 	    return $resultado;
     }
 
-    public function buscarPorIDcliente($IDcliente) {
+    public function buscarPorIDClientes($IDClientes) {
 
-    	$objDataClientes = new DataCliente();
-        $registro = $objDataClientes->buscarPorIDcliente($IDcliente);
+    	$objDataCliente = new DataCliente();
+        $registro = $objDataCliente->buscarPorIDClientes($IDClientes);
         if ($registro)
         	return new self($registro['IDClientes'] , $registro['nombre'] ,$registro['dni'] ,$registro['email'], $registro['direccion'], $registro['tipo']);
         else 
@@ -97,8 +97,8 @@ class Cliente {
     }
 
     public function Listar() {
-        $objDataClientes = new DataCliente();
-        $arrayRegistros = $objDataClientes->Listar();
+        $objDataCliente = new DataCliente();
+        $arrayRegistros = $objDataCliente->Listar();
         
         if (!$arrayRegistros)
         	return false;
