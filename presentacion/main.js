@@ -21,7 +21,8 @@ $(document).ready(function () {
     $(window).scroll(function () {
         var topPos = $(this).scrollTop();
         console.log(topPos);
-        if (topPos > 900) {
+        if (topPos > 1026) {
+            return topPos;
             
         }
     });

@@ -10,7 +10,7 @@ body {
     font-size: 20px;
     margin: 2px;
     padding: 2px;    
-    background: linear-gradient(90deg, #0020ff, #e2e69a);
+    background: linear-gradient(90deg, #0020ff, #9c5144);
 }
 
 .logo {
@@ -22,23 +22,24 @@ body {
 
 .logoimg {
     width: 100%;
-    height: auto;    
+    height: auto; 
+    border-radius: 15px;   
 }
 
-#shadow .image {
-    width: 400px;
-    border-radius: 25px;           
+.carousel-inner {
+    border-radius: 15px;
 }
 
-#shadow {
-    box-shadow: 5px 5px 5px 5px rgba(68, 68, 68, 68);
+.image, .shadow, .image2 {
+    width: 100%;
+    height: auto;
     border-radius: 25px;
-}
+    box-shadow: 0 0 20px white;
+}    
 
 .image2 {
     width: 100%;
-    height: auto;
-    padding-top: 150px;    
+    height: auto;      
 }
 
 .logopie {
@@ -48,6 +49,7 @@ body {
 .logofooter {
     width: 100%;
     height: auto;
+    border-radius: 15px;
 }
 
 .header {
@@ -125,7 +127,7 @@ body {
 }
 
 table {
-    background: linear-gradient(10deg, #6f5cd2, #0ef0c8);
+    background: linear-gradient(10deg, #acbcab, #1f291c);
     border: 2px solid white;
 }
 
