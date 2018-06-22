@@ -90,7 +90,7 @@ class Contacto {
 	
 	public function Insertar() {
     	$objDataContacto = new DataContacto();
-        $resultado = $objDataContacto->Insertar($this -> tipo, $this -> nombre, $this -> email, $this -> telefono, $this -> texto, $this -> respondido, $this -> respuesta);
+        $resultado = $objDataContacto->Insertar((null, $this -> tipo, $this -> nombre, $this -> email, $this -> telefono, $this -> texto, $this -> respondido, $this -> respuesta);
         return $resultado;
     }
 

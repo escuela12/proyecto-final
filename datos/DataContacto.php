@@ -5,7 +5,7 @@ require_once 'conexion.php';
 class DataContacto {
 	const TABLA = 'contactos';
 
-	public function insertar($tipo, $nombre, $email, $telefono, $texto, $respondido ,$respuesta){
+	public function insertar(($tipo, $nombre, $email, $telefono, $texto, $respondido ,$respuesta){
 
 		$conexion = new conexion ();
 

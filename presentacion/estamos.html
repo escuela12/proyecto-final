@@ -46,64 +46,76 @@
     </div>
 </div>
 <div class="containerfluid top">
-    <div class="row contacto">        
-        <form name="contactform" method="post" action="insertar.php" class="col-5 form-inline" style='padding-bottom: 6%;'> 
-            <table><!---Este tamaño en px es personalizable -->
-                <tr>
-                    <td valign="top">
-                        <label for="nombre" class="table">Nombre *</label>
-                    </td>
-                    <td valign="top">
-                        <input  type="text" name="nombre" maxlength="50" size="30">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">
-                        <label for="telefono" class="table">Teléfono *</label>
-                    </td>
-                    <td valign="top">
-                        <input  type="text" name="telefono" maxlength="50" size="30">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">
-                        <label for="email" class="table">E-mail *</label>
-                    </td>
-                    <td valign="top">
-                        <input  type="text" name="email" maxlength="80" size="30">
-                    </td>
-                </tr>                
-                <tr>
-                    <td valign="top">
-                        <label for="mensaje" class="table">Mensaje *</label>
-                    </td>
-                    <td valign="top">
-                        <textarea  name="mensaje" maxlength="2000" cols="33" rows="6"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align:center">
-                        <a href="insertar.php" class="btn btn-primary btn-lg">Enviar</a>
-                    </td>
-                </tr>
-           </table>
-           <div class="col-5">
-                <h2 class="blockquote-footer text-center text-white">Puedes escribirnos para pedirnos información sin ningun tipo de compromiso y nos pondremos en contacto contigo lo mas pronto posible.</h2>
-           </div>
-        </form>               
-        <div class="containerfluid">
-            <div class="row">
+    <div class="row">  
+        <div class="col">      
+            <form method="post" action="insertar.php" class="contacto" style='padding-bottom: 6%;'> 
+                <table><!---Este tamaño en px es personalizable -->
+                    <tr>
+                        <td valign="top">
+                            <label for="empresa" class="table">Empresa *</label>                        
+                        </td>
+                        <td valign="top">
+                            <input type="checkbox" aria-label="Checkbox for following text input" name="empresa">
+                        </td>
+                        <td valign="top">
+                            <label for="autonomo" class="table">Autonomo *</label>                        
+                        </td>
+                        <td valign="top">
+                            <input type="checkbox" aria-label="Checkbox for following text input" name="autonomo">
+                        </td>
+                    </tr>
+                    <tr>                        
+                        <td valign="top">
+                            <label for="nombre" class="table">Nombre *</label>
+                        </td>
+                        <td valign="top">
+                            <input  type="text" name="nombre" maxlength="50" size="30">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <label for="telefono" class="table">Teléfono *</label>
+                        </td>
+                        <td valign="top">
+                            <input  type="text" name="telefono" maxlength="50" size="30">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <label for="email" class="table">E-mail *</label>
+                        </td>
+                        <td valign="top">
+                            <input  type="text" name="email" maxlength="80" size="30">
+                        </td>
+                    </tr>                
+                    <tr>
+                        <td valign="top">
+                            <label for="mensaje" class="table">Mensaje *</label>
+                        </td>
+                        <td valign="top">
+                            <textarea  name="mensaje" maxlength="2000" cols="33" rows="6"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:center">
+                            <input type="submit" name="btEnviar" class="btn btn-primary btn-lg" value="Enviar">
+                        </td>
+                    </tr>
+                </table>
                 <div class="col">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11954.879336176673!2d2.1289920327052916!3d41.488673266449396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a496729cf77391%3A0x4baf89b2cb83ecc3!2s08290+Cerdanyola%2C+Barcelona!5e0!3m2!1ses!2ses!4v1528039335938"
-                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    <blockquote class="blockquote text-center">
-                        <p class="mb-0 text-white">Estamos en el Parc Tecnologic s/n.</p>
-                        <footer class="blockquote-footer text-white">Cerdanyola del Valles-Barcelona. C.P. 08290. telefono 93 580 50 17</footer>
-                    </blockquote>            
-                </div>        
-            </div>
-        </div>           
-    </div>  
+                    <h2 class="blockquote-footer text-white">Puedes escribirnos para pedirnos información sin ningun tipo de compromiso y nos pondremos en contacto contigo lo mas pronto posible.</h2>
+                </div>
+            </form>
+        </div>
+        <div class="col">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11954.879336176673!2d2.1289920327052916!3d41.488673266449396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a496729cf77391%3A0x4baf89b2cb83ecc3!2s08290+Cerdanyola%2C+Barcelona!5e0!3m2!1ses!2ses!4v1528039335938"
+             width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <blockquote class="blockquote text-center">
+                <p class="mb-0 text-white">Estamos en el Parc Tecnologic s/n.</p>
+                <footer class="blockquote-footer text-white">Cerdanyola del Valles-Barcelona. C.P. 08290. telefono 93 580 50 17</footer>
+            </blockquote>            
+        </div>                
+    </div>              
 </div> 
 <div class="subfooter top">
     <div class="lista">

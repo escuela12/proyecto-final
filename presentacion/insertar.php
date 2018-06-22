@@ -1,9 +1,10 @@
 <?php
 	if (isset($_POST['btEnviar'])) {          
        
-                $objgContacto = new Contacto(null, $_POST['tipo'], $_POST['nombre'], $_POST['email'], $_POST['telefono'], $_POST['mensaje'],null, null);  
+                $objgContacto = new Contacto(null, null, $_POST['nombre'], $_POST['email'], $_POST['telefono'], $_POST['mensaje'], null, null);  
                 $objgContacto -> insertar();
-                header('Location: estamos.html');      
+                header('Location: estamos.html');  
+                die();    
   		  
 	}
 ?>

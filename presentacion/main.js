@@ -20,12 +20,12 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
         var topPos = $(this).scrollTop();
-        console.log(topPos);
-        if (topPos > 1026) {
-            return topPos;
-            
+        // console.log(topPos);
+        if (topPos > 800) {
+            $(".cajaRight").addClass("right");
+            $('.cajaLeft').addClass('left');
         }
     });
-
+  
 }); 
 
