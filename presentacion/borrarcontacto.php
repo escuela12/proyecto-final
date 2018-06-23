@@ -33,8 +33,7 @@ require_once "../negocio/Contacto.php";
 
 <br><br>
         <table border='3'>
-            <input type="hidden" name="tbIDContacto" value=<?php echo $ContMostar->getIDContacto(); ?>
-            <tr><td>Tipo: </td><td><input type="text" name="tbTipo" value=<?php echo $ContMostar->getTipo(); ?>></td></tr>
+            <input type="hidden" name="tbIDContacto" value=<?php echo $ContMostar->getIDContacto(); ?>            
             <tr><td>Nombre: </td><td><input type="text" name="tbNombre" value=<?php echo $ContMostar->getNombre(); ?>></td></tr>
             <tr><td>Email: </td><td><input type="text" name="tbEmail" value=<?php echo $ContMostar->getEmail(); ?>></td></tr>
             <tr><td>Telefono: </td><td><input type="text" name="tbTelefono" value=<?php echo $ContMostar->getTelefono(); ?>></td></tr>
@@ -55,7 +54,7 @@ require_once "../negocio/Contacto.php";
 
 if (isset($_POST['btModificar']) or isset($_POST['btBorrar'])) {
 
-        $ContaModi = new Contacto ($_POST['tbIDContacto'], $_POST['tbTipo'], $_POST['tbNombre'], $_POST['tbEmail'], $_POST['tbTelefono'], $_POST['tbTexto'], $_POST['tbRespondido'], $_POST['tbRespuesta']);
+        $ContaModi = new Contacto ($_POST['tbIDContacto'], $_POST['tbNombre'], $_POST['tbEmail'], $_POST['tbTelefono'], $_POST['tbTexto'], $_POST['tbRespondido'], $_POST['tbRespuesta']);
 
         if (isset($_POST['btModificar'])) {
 

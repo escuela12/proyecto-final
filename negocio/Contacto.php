@@ -4,8 +4,7 @@ require_once '../datos/DataContacto.php';
 
 class Contacto {
 
-	private $IDContacto;
-	private $tipo;
+	private $IDContacto;	
 	private $nombre;
 	private $email;
 	private $telefono;
@@ -13,10 +12,9 @@ class Contacto {
 	private $respondido;
 	private $respuesta;
 		
-	public function __construct($IDContacto = null, $tipo = null, $nombre = null, $email = null, $telefono = null, $texto = null, $respondido = null, $respuesta = null){
+	public function __construct($IDContacto = null, $nombre = null, $email = null, $telefono = null, $texto = null, $respondido = null, $respuesta = null){
 
-		$this -> IDContacto = $IDContacto;
-		$this -> tipo = $tipo;
+		$this -> IDContacto = $IDContacto;		
 		$this -> nombre = $nombre;
 		$this -> email = $email;
 		$this -> telefono = $telefono;
@@ -28,11 +26,7 @@ class Contacto {
 	public function getIDContacto(){
 		return $this -> IDContacto;
 	}
-
-	public function getTipo(){
-		return $this -> tipo;
-	}
-
+	
 	public function getNombre(){
 		return $this -> nombre;
 	}
@@ -58,10 +52,6 @@ class Contacto {
 
 	public function setIDContacto($IDContacto){
 		$this -> IDContacto;
-	}
-
-	public function setTipo($tipo){
-		$this -> tipo;
 	}
 
 	public function setNombre($nombre){
@@ -90,13 +80,13 @@ class Contacto {
 	
 	public function Insertar() {
     	$objDataContacto = new DataContacto();
-        $resultado = $objDataContacto->Insertar((null, $this -> tipo, $this -> nombre, $this -> email, $this -> telefono, $this -> texto, $this -> respondido, $this -> respuesta);
+        $resultado = $objDataContacto->Insertar((null, $this -> nombre, $this -> email, $this -> telefono, $this -> texto, $this -> respondido, $this -> respuesta);
         return $resultado;
     }
 
     public function Modificar() {
         $objDataContacto = new DataContacto();
-        $resultado = $objDataContacto->Modificar($this -> IDContacto ,$this -> tipo, $this -> nombre, $this -> email, $this -> telefono, $this -> texto, $this -> respondido, $this -> respuesta);
+        $resultado = $objDataContacto->Modificar($this -> IDContacto , $this -> nombre, $this -> email, $this -> telefono, $this -> texto, $this -> respondido, $this -> respuesta);
 	    return $resultado;
     }
 
@@ -111,7 +101,7 @@ class Contacto {
     	$objDataContacto = new DataContacto();
         $registro = $objDataContacto->buscarPorIDContacto($IDContacto);
         if ($registro)
-        	return new self($registro['IDContacto'] , $registro['tipo'] ,$registro['nombre'] ,$registro['email'], $registro['telefono'], $registro['texto'], $registro['respondido'], $registro['respuesta']);
+        	return new self($registro['IDContacto'] , $registro['nombre'] ,$registro['email'], $registro['telefono'], $registro['texto'], $registro['respondido'], $registro['respuesta']);
         else 
         	return false;
     }
@@ -125,7 +115,7 @@ class Contacto {
         else {
         	$arrayContactos = array();
         	foreach ($arrayRegistros as $registro) {
-        		$objgContacto = new Contacto ($registro['IDContacto'] , $registro['tipo'] ,$registro['nombre'] ,$registro['email'], $registro['telefono'], $registro['texto'], $registro['respondido'], $registro['respuesta']);
+        		$objgContacto = new Contacto ($registro['IDContacto'] , $registro['nombre'] ,$registro['email'], $registro['telefono'], $registro['texto'], $registro['respondido'], $registro['respuesta']);
         		$arrayContactos[] = $objgContacto;
         	}
 

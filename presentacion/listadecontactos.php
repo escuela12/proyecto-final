@@ -17,8 +17,7 @@ require "../negocio/Contacto.php";
     $arrayContactos = $Contacto-> Listar(); 
     
     echo "<table border='2'>";
-    echo "<tr>";
-    echo "<th>TIPO</th>";
+    echo "<tr>";    
     echo "<th>NOMBRE</th>";
     echo "<th>EMAIL</th>";
     echo "<th>TELEFONO</th>";
@@ -31,8 +30,7 @@ require "../negocio/Contacto.php";
         
         foreach($arrayContactos as $Con ) {
         
-            echo "<tr>";
-            echo "<td>" . $Con->getTipo() . "</td>";           
+            echo "<tr>";                     
             echo "<td>" . $Con->getNombre() . "</td>";
             echo "<td>" . $Con->getEmail() . "</td>";
             echo "<td>" . $Con->getTelefono() . "</td>";

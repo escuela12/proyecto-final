@@ -12,8 +12,7 @@ require_once "../negocio/Contacto.php";
 <h1 class="text-center">INSERTAR NUEVO CONTACTO</h1>
 <div class="containerfluid row justify-content-center">
     <form action="insertarcontacto.php" method="post">
-        <table border='2' class="table table-striped">
-            <tr><td scope="col">Tipo: </td><td><input type="text" name="tbTipo"> </td></tr>
+        <table border='2' class="table table-striped">            
             <tr><td scope="col">Nombre: </td><td><input type="text" name="tbNombre"> </td></tr>
             <tr><td scope="col">Email: </td><td><input type="text" name="tbEmail"></td></tr>
             <tr><td scope="col">Telefono: </td><td><input type="text" name="tbTelefono"></td></tr>
@@ -30,7 +29,7 @@ require_once "../negocio/Contacto.php";
 if (isset($_POST['btInsertar'])) {
            
         
-   $objgContacto = new Contacto(null, $_POST['tbTipo'], $_POST['tbNombre'], $_POST['tbEmail'], $_POST['tbTelefono'], $_POST['tbTexto'], $_POST['tbRespondido'], $_POST['tbRespuesta']);
+   $objgContacto = new Contacto(null, $_POST['tbNombre'], $_POST['tbEmail'], $_POST['tbTelefono'], $_POST['tbTexto'], $_POST['tbRespondido'], $_POST['tbRespuesta']);
    
    $resultado = $objgContacto -> insertar();
 

@@ -5,13 +5,12 @@ require_once 'conexion.php';
 class DataContacto {
 	const TABLA = 'contactos';
 
-	public function insertar(($tipo, $nombre, $email, $telefono, $texto, $respondido ,$respuesta){
+	public function insertar(($nombre, $email, $telefono, $texto, $respondido ,$respuesta){
 
 		$conexion = new conexion ();
 
-		$consulta = $conexion->prepare ('INSERT INTO ' . self::TABLA . ' (IDContacto, tipo, nombre, email, telefono, texto, respondido, respuesta ) values (null, :tipo, :nombre, :email, :telefono, :texto, :respondido, :respuesta  )');
+		$consulta = $conexion->prepare ('INSERT INTO ' . self::TABLA . ' (IDContacto, nombre, email, telefono, texto, respondido, respuesta ) values (null, :tipo, :nombre, :email, :telefono, :texto, :respondido, :respuesta  )');
 
-		$consulta->bindParam(':tipo', $tipo);
 		$consulta->bindParam(':nombre', $nombre);
 		$consulta->bindParam(':email', $email);
 		$consulta->bindParam(':telefono', $telefono);
@@ -28,14 +27,13 @@ class DataContacto {
 	    return $resultado;
 	}
 
-	public function Modificar($IDContacto, $tipo, $nombre, $email, $telefono, $texto, $respondido ,$respuesta){
+	public function Modificar($IDContacto, $nombre, $email, $telefono, $texto, $respondido ,$respuesta){
 
 		$conexion = new conexion ();
 
-		$consulta = $conexion->prepare ('UPDATE ' . self::TABLA . ' SET IDContacto = :IDContacto, tipo = :tipo, nombre = :nombre, email = :email, telefono = :telefono, texto = :texto, respondido = :respondido, respuesta = :respuesta WHERE IDContacto = :IDContacto');
+		$consulta = $conexion->prepare ('UPDATE ' . self::TABLA . ' SET IDContacto = :IDContacto, nombre = :nombre, email = :email, telefono = :telefono, texto = :texto, respondido = :respondido, respuesta = :respuesta WHERE IDContacto = :IDContacto');
 
-		$consulta->bindParam(':IDContacto', $IDContacto);
-		$consulta->bindParam(':tipo', $tipo);
+		$consulta->bindParam(':IDContacto', $IDContacto);		
 		$consulta->bindParam(':nombre', $nombre);
 		$consulta->bindParam(':email', $email);
 		$consulta->bindParam(':telefono', $telefono);
