@@ -88,7 +88,7 @@ body {
     padding-top: 30px;
 }
 
-.caja {
+.caja, .caja2 {
     align-self: center; 
 }
 
@@ -180,7 +180,16 @@ table {
 }
 
 .object {
-    position: absolute;
+    position: relative;
+    text-decoration-line: overline;
+}
+
+.object2 {
+    position: relative;    
+}
+
+.van2 {
+    top: 65%;
 }
 
 .van {

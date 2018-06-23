@@ -21,7 +21,7 @@ $(document).ready(function () {
     $(window).scroll(function () {
         var topPos = $(this).scrollTop();
         // console.log(topPos);
-        if (topPos > 800) {
+        if (topPos > 900) {
             $(".cajaRight").addClass("right");
             $('.cajaLeft').addClass('left');
         }
