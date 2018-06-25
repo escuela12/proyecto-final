@@ -99,10 +99,12 @@ body {
 
 #metal {
     display: none;
+    padding-bottom: 20%;
 }
 
 #plancha {
     display: none;
+    padding-bottom: 20%;
 }
 
 .top {
@@ -252,11 +254,11 @@ table {
 
 /*Estilos del modal*/
 
-.modal, .modal1, .modal2, .modal3, .modal4 {
+.modal, .modal1, .modal2, .modal3, .modal4, .modal5, .modal6  {
     display: none;
 }
 
-.modal:target, .modal1:target, .modal2:target, .modal3:target, .modal4:target {
+.modal:target, .modal1:target, .modal2:target, .modal3:target, .modal4:target, .modal5:target, .modal6:target {
     
     display: block;
     position: fixed;
@@ -267,7 +269,7 @@ table {
     height: 100%;
 }
 
-.modal, .modal1, .modal2, .modal3 h3, .modal4 h3 {
+.modal, .modal1, .modal2, .modal3 h3, .modal4 h3, .modal5 h3, .modal6 h3 {
     color: #fff;
     font-size: 30px;
     text-align: center;
@@ -320,4 +322,8 @@ table {
 
 .title, .botones {
     padding-left: 20%;
+}
+
+#interes {
+    text-align: center;
 }
