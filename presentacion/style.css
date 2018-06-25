@@ -327,3 +327,12 @@ table {
 #interes {
     text-align: center;
 }
+
+.text {
+    color: white;   
+}
+
+.enlaces ul li {
+    list-style: none;
+}
+
