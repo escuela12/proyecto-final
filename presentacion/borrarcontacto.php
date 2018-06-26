@@ -5,10 +5,12 @@ require_once "../negocio/Contacto.php";
 ?>
 
 <html>
-<head></head>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
 <body>
     
-    <h1>BORRAR / MODIFICAR CONTACTOS</h1>
+    <h1 class="text-center display-3 text-primary">BORRAR / MODIFICAR CONTACTOS</h1>
 
 <?php
     $Contacto = new Contacto();
@@ -24,7 +26,7 @@ require_once "../negocio/Contacto.php";
     <?php } ?>
     </select>
     <br><br>
-    <input type="submit" value="Mostrar" name=btMostrar>
+    <input type="submit" value="Mostrar" name=btMostrar class="btn btn-primary">
 
 <?php
    if (isset($_POST['btMostrar'])) {
@@ -34,17 +36,17 @@ require_once "../negocio/Contacto.php";
 <br><br>
         <table border='3'>
             <input type="hidden" name="tbIDContacto" value=<?php echo $ContMostar->getIDContacto(); ?>            
-            <tr><td>Nombre: </td><td><input type="text" name="tbNombre" value=<?php echo $ContMostar->getNombre(); ?>></td></tr>
-            <tr><td>Email: </td><td><input type="text" name="tbEmail" value=<?php echo $ContMostar->getEmail(); ?>></td></tr>
-            <tr><td>Telefono: </td><td><input type="text" name="tbTelefono" value=<?php echo $ContMostar->getTelefono(); ?>></td></tr>
-            <tr><td>Texto: </td><td><input type="text" name="tbTexto" value=<?php echo $ContMostar->getTexto(); ?>></td></tr> 
-            <tr><td>Respondido: </td><td><input type="text" name="tbRespondido" value=<?php echo $ContMostar->getRespondido(); ?>></td></tr>
-            <tr><td>Respuesta: </td><td><input type="text" name="tbRespuesta" value=<?php echo $ContMostar->getRespuesta(); ?>></td></tr>           
+            <tr><td>Nombre: </td><td><input type="text" name="tbNombre" maxlength="250" size="150" value=<?php echo $ContMostar->getNombre(); ?>></td></tr>
+            <tr><td>Email: </td><td><input type="text" name="tbEmail" maxlength="250" size="150" value=<?php echo $ContMostar->getEmail(); ?>></td></tr>
+            <tr><td>Telefono: </td><td><input type="text" name="tbTelefono" maxlength="250" size="150" value=<?php echo $ContMostar->getTelefono(); ?>></td></tr>
+            <tr><td>Texto: </td><td><input type="text" name="tbTexto" maxlength="250" size="150" value=<?php echo $ContMostar->getTexto(); ?>></td></tr> 
+            <tr><td>Respondido: </td><td><input type="text" name="tbRespondido" maxlength="250" size="150" value=<?php echo $ContMostar->getRespondido(); ?>></td></tr>
+            <tr><td>Respuesta: </td><td><input type="text" name="tbRespuesta" maxlength="250" size="150" value=<?php echo $ContMostar->getRespuesta(); ?>></td></tr>           
         </table>
 
         <br>
-        <input type="submit" value="MODIFICAR" name="btModificar">
-        <input type="submit" value="BORRAR" name="btBorrar">
+        <input type="submit" value="MODIFICAR" name="btModificar" class="btn btn-primary">
+        <input type="submit" value="BORRAR" name="btBorrar" class="btn btn-primary">
 
 <?php 
 } 
@@ -61,10 +63,10 @@ if (isset($_POST['btModificar']) or isset($_POST['btBorrar'])) {
             $consulta = $ContaModi -> Modificar(); 
            
             if ($consulta)
-                echo "Registro Modificado";
+                echo "<p class='text-center text-primary'>Registro Modificado</p>";
 
             else
-                echo "Error en la Modificación: ";
+                echo "<p class='text-center text-primary'>Error en la Modificación</p>";
 
         }
 
@@ -72,9 +74,9 @@ if (isset($_POST['btModificar']) or isset($_POST['btBorrar'])) {
 
             $consulta = $ContaModi -> Eliminar();
             if ($consulta)
-                echo "Registro Elininado";
+                echo "<p class='text-center text-primary'>Registro Elininado</p>";
             else
-                echo "Error en la Eliminacion: ";
+                echo "<p class='text-center text-primary'>Error en la Eliminacion</p>";
         }        
        
     }
