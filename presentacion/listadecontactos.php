@@ -2,13 +2,14 @@
 
 require "../negocio/Contacto.php";
 
-
 ?>
 
 <html>
-<head></head>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
 <body>
-	<H1>CONTACTOS</H1>
+	<H1 class="display-3 text-center text-primary">LISTA DE CONTACTOS</H1>
 
 	<?php 
     //echo $consulta->ErrorInfo()[2];
@@ -16,8 +17,8 @@ require "../negocio/Contacto.php";
 	$Contacto = new Contacto();
     $arrayContactos = $Contacto-> Listar(); 
     
-    echo "<table border='2'>";
-    echo "<tr>";    
+    echo "<table border='2'class='table table-hover text-centered'>";
+    echo "<tr class='table-primary'>";    
     echo "<th>NOMBRE</th>";
     echo "<th>EMAIL</th>";
     echo "<th>TELEFONO</th>";

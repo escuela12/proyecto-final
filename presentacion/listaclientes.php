@@ -9,17 +9,17 @@ require "../negocio/Cliente.php";
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 </head>
-<body class="p-3 mb-2 bg-info">
+<body>
 
-   <h2 class="text-success text-center display-3">CLIENTES</h2>
+   <h2 class="text-center display-3 text-primary">LISTA DE CLIENTES</h2>
 
 <?php 
 
     $Cliente = new Cliente();
     $arrayClientes = $Cliente-> Listar(); 
     
-    echo "<table border='3' table align='center' style='height: 60px;'>";
-    echo "<tr class='table-active'>";    
+    echo "<table border='3' class='table table-hover text-centered'>";
+    echo "<tr class='table-success'>";    
     echo "<th>NOMBRE</th>";
     echo "<th>D.N.I</th>";
     echo "<th>EMAIL</th>";

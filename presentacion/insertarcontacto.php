@@ -9,19 +9,19 @@ require_once "../negocio/Contacto.php";
 </head>
 <body>
     
-<h1 class="text-center">INSERTAR NUEVO CONTACTO</h1>
-<div class="containerfluid row justify-content-center">
+<h1 class="display-3 text-center text-primary">INSERTAR NUEVO CONTACTO</h1>
+<div class="container">
     <form action="insertarcontacto.php" method="post">
-        <table border='2' class="table table-striped">            
-            <tr><td scope="col">Nombre: </td><td><input type="text" name="tbNombre"> </td></tr>
-            <tr><td scope="col">Email: </td><td><input type="text" name="tbEmail"></td></tr>
-            <tr><td scope="col">Telefono: </td><td><input type="text" name="tbTelefono"></td></tr>
-            <tr><td scope="col">Texto: </td><td><input type="text" name="tbTexto"></td></tr>
-            <tr><td scope="col">Respondido: </td><td><input type="text" name="tbRespondido"></td></tr>
-            <tr><td scope="col">Respuesta: </td><td><input type="text" name="tbRespuesta"></td></tr>         
+        <table border='2' class="table table-condensed">            
+            <tr><td scope="col">Nombre: </td><td><input type="text" name="tbNombre" maxlength="250" size="150"> </td></tr>
+            <tr><td scope="col">Email: </td><td><input type="text" name="tbEmail" maxlength="250" size="150"></td></tr>
+            <tr><td scope="col">Telefono: </td><td><input type="text" name="tbTelefono" maxlength="250" size="150"></td></tr>
+            <tr><td scope="col">Texto: </td><td><input type="text" name="tbTexto" maxlength="250" size="150"></td></tr>
+            <tr><td scope="col">Respondido: </td><td><input type="text" name="tbRespondido" maxlength="250" size="150"></td></tr>
+            <tr><td scope="col">Respuesta: </td><td><input type="text" name="tbRespuesta" maxlength="250" size="150"></td></tr>         
         </table>
         <br>
-        <input type="submit" class="btn btn-primary " value="INSERTAR" name="btInsertar">
+        <input type="submit" class="btn btn-primary justify-content-center" value="INSERTAR" name="btInsertar">
     </form>
 </div>
 <?php
