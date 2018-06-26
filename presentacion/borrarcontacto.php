@@ -34,6 +34,7 @@ require_once "../negocio/Contacto.php";
 ?>
 
 <br><br>
+    <div class="container">    
         <table border='3'>
             <input type="hidden" name="tbIDContacto" value=<?php echo $ContMostar->getIDContacto(); ?>            
             <tr><td>Nombre: </td><td><input type="text" name="tbNombre" maxlength="250" size="150" value=<?php echo $ContMostar->getNombre(); ?>></td></tr>
@@ -47,7 +48,7 @@ require_once "../negocio/Contacto.php";
         <br>
         <input type="submit" value="MODIFICAR" name="btModificar" class="btn btn-primary">
         <input type="submit" value="BORRAR" name="btBorrar" class="btn btn-primary">
-
+    </div>
 <?php 
 } 
 ?>
