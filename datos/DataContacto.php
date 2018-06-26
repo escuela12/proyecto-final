@@ -9,7 +9,7 @@ class DataContacto {
 
 		$conexion = new conexion ();
 
-		$consulta = $conexion->prepare ('INSERT INTO ' . self::TABLA . ' (IDContacto, nombre, email, telefono, texto, respondido, respuesta ) values (null, :tipo, :nombre, :email, :telefono, :texto, :respondido, :respuesta  )');
+		$consulta = $conexion->prepare ('INSERT INTO ' . self::TABLA . ' (nombre, email, telefono, texto, respondido, respuesta ) values (:nombre, :email, :telefono, :texto, :respondido, :respuesta  )');
 
 		$consulta->bindParam(':nombre', $nombre);
 		$consulta->bindParam(':email', $email);
