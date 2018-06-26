@@ -10,7 +10,7 @@ body {
     font-size: 20px;
     margin: 2px;
     padding: 2px;    
-    background: linear-gradient(90deg, #0020ff, #9c5144);
+    background: linear-gradient(90deg,  #433958, #9c5144);
 }
 
 .logo {
@@ -30,12 +30,13 @@ body {
     border-radius: 15px;
 }
 
-.image, .shadow, .image2 {
+.image, .image2, .shadow {
     width: 100%;
     height: auto;
-    border-radius: 10px;
     box-shadow: 0 0 20px black;
-}    
+    border-radius: 10px;
+   
+} 
 
 .image2 {
     width: 100%;
@@ -107,8 +108,13 @@ body {
     padding-bottom: 20%;
 }
 
+/*padding top de todas las paginas*/
 .top {
     padding-top: 4%;
+}
+
+.where {
+    padding-top: 10%;
 }
 
 .justify {
@@ -146,9 +152,37 @@ table {
     visibility: visible;
 }
 
+.right2 {
+    animation-name: fadeRight;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    visibility: visible;
+}
+
+.right3 {
+    animation-name: fadeRight;
+    animation-duration: 4s;
+    animation-delay: 0.5s;
+    visibility: visible;
+}
+
 .left {
     animation-name: fadeLeft;
     animation-duration: 2s;
+    animation-delay: 0.5s;
+    visibility: visible;
+}
+
+.left2 {
+    animation-name: fadeLeft;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    visibility: visible;
+}
+
+.left3 {
+    animation-name: fadeLeft;
+    animation-duration: 4s;
     animation-delay: 0.5s;
     visibility: visible;
 }
@@ -166,6 +200,7 @@ table {
         -webkit-transform: none;
     }
 }
+
 
 @keyframes fadeLeft {
     0% {
@@ -201,7 +236,7 @@ table {
 /*estilo tabla*/
 
 table {
-    width: 600px;
+    width: 540px;
     height: 380px;
 }
 
@@ -335,4 +370,3 @@ table {
 .enlaces ul li {
     list-style: none;
 }
-

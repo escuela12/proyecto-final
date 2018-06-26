@@ -24,6 +24,10 @@ $(document).ready(function () {
         if (topPos > 900) {
             $(".cajaRight").addClass("right");
             $('.cajaLeft').addClass('left');
+            $(".cajaRight2").addClass("right2");
+            $('.cajaLeft2').addClass('left2');
+            $(".cajaRight3").addClass("right3");
+            $('.cajaLeft3').addClass('left3');
         }
     });
   
